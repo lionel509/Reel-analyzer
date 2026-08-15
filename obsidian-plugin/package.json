@@ -1,0 +1,18 @@
+{
+  "name": "obsidian-reel-analyzer",
+  "version": "0.1.0",
+  "description": "Obsidian front door for the reel-analyzer pipeline.",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "install-local": "node esbuild.config.mjs && node install.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "builtin-modules": "^4.0.0",
+    "esbuild": "^0.24.0",
+    "obsidian": "^1.7.2",
+    "typescript": "^5.7.2"
+  }
+}

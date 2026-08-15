@@ -1,0 +1,18 @@
+.reel-analyzer-modal .reel-analyzer-input {
+  width: 100%;
+  margin: 4px 0 10px;
+}
+
+.reel-analyzer-modal .reel-analyzer-status {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  min-height: 1.4em;
+  margin-bottom: 12px;
+  word-break: break-word;
+}
+
+.reel-analyzer-modal .reel-analyzer-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}

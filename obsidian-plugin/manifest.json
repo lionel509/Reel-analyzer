@@ -1,0 +1,9 @@
+{
+  "id": "reel-analyzer",
+  "name": "Reel Analyzer",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "Paste a Reel, TikTok, or YouTube link and get back a transcript plus a description of what is on screen, written straight into your notes.",
+  "author": "Lionel Weng",
+  "isDesktopOnly": true
+}

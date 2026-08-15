@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- reel-analyzer ---
+# This folder doubles as a note folder in a private Obsidian vault. The project
+# notes and the code-graph output stay local; only the code is versioned here.
+/Reel Analyzer MCP — *.md
+/graphify-out/
+/.graphifyignore
+
+# macOS / node
+.DS_Store
+node_modules/
