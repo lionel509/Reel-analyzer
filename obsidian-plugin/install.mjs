@@ -6,7 +6,9 @@
 import { copyFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 
-const TARGET = "/Users/lionelweng/Documents/.obsidian/plugins/reel-analyzer";
+/** Override the target vault with OBSIDIAN_VAULT. */
+const VAULT = process.env.OBSIDIAN_VAULT ?? "/Users/lionelweng/Documents";
+const TARGET = join(VAULT, ".obsidian/plugins/reel-analyzer");
 
 await mkdir(TARGET, { recursive: true });
 for (const file of ["main.js", "manifest.json", "styles.css"]) {
