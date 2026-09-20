@@ -120,7 +120,6 @@ async def probe(url_or_path: str, config: Config) -> MediaInfo:
         return MediaInfo(title=path.name, platform="file", duration=duration)
 
     from yt_dlp import YoutubeDL
-    from yt_dlp.utils import DownloadError
 
     def _extract() -> dict:
         with YoutubeDL({**_ydl_opts(config, "-"), "skip_download": True}) as ydl:
@@ -128,8 +127,6 @@ async def probe(url_or_path: str, config: Config) -> MediaInfo:
 
     try:
         info = await asyncio.to_thread(_extract)
-    except DownloadError as exc:
-        raise AcquisitionError(_humanise(exc)) from exc
     except Exception as exc:  # yt-dlp raises a wide range of extractor errors
         raise AcquisitionError(_humanise(exc)) from exc
 
@@ -168,7 +165,6 @@ async def fetch_video(url_or_path: str, workdir: Path, config: Config) -> Path:
         return path
 
     from yt_dlp import YoutubeDL
-    from yt_dlp.utils import DownloadError
 
     outtmpl = str(workdir / "video.%(ext)s")
 
@@ -182,8 +178,6 @@ async def fetch_video(url_or_path: str, workdir: Path, config: Config) -> Path:
         raise AcquisitionError(
             f"download timed out after {config.download_timeout:.0f}s"
         ) from None
-    except DownloadError as exc:
-        raise AcquisitionError(_humanise(exc)) from exc
     except Exception as exc:
         raise AcquisitionError(_humanise(exc)) from exc
 
