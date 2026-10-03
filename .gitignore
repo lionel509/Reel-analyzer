@@ -227,3 +227,33 @@ __marimo__/
 # macOS / node
 .DS_Store
 node_modules/
+
+# --- cleanup pass (issue #1) — appended; nothing above was removed --------
+
+# Credential variants the stock template misses. `.env` is covered above;
+# `.env.example` is tracked and stays tracked, hence the negation.
+.env.*
+!.env.example
+cookies.txt
+*.cookies.txt
+credentials.json
+secrets.json
+client_secret*.json
+*.key
+*.pem
+
+# Editor cruft the stock template ships commented out (.idea/, .vscode/)
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+Thumbs.db
+
+# TypeScript build info + coverage dirs from future `tsc` / coverage runs
+# in obsidian-plugin/ (the stock block has cover/ and htmlcov/, not coverage/)
+*.tsbuildinfo
+coverage/
+
+# Claude Code machine-local settings
+.claude/settings.local.json

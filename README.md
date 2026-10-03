@@ -143,3 +143,10 @@ frames. Raise the cap for denser coverage; it is never silently truncated.
 
 **yt-dlp fails on a site that used to work** — platforms change constantly.
 `uv sync --upgrade-package yt-dlp`.
+
+## Cleanup
+
+Teardown when this checkout is done: see [`CLEANUP.md`](CLEANUP.md) — what the
+pipeline leaves behind, preview/clean commands (they keep `.env`, cookies and the
+gitignored `Reel Analyzer MCP — *.md` hub notes), and the outside-the-repo bits
+(`~/.venvs/reel-analyzer`, `~/.config/reel-analyzer/config.json`, yt-dlp's cache).
